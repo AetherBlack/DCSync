@@ -51,16 +51,18 @@ dcsync $DOMAIN/$USER:"$PASSWORD"@$DC
 - You want to DCSync for a single principal :
 
 ```bash
-dcsync -just-user Aether $DOMAIN/$USER:"$PASSWORD"@$DC
+dcsync -just-user krbtgt -k $DOMAIN/$USER:"$PASSWORD"@$DC
 ```
 
-![](./docs/img/3.png)
+![](./docs/img/2.png)
 
 - You want to DCSync the whole domain without Administrator privilegies using ldap method :
 
 ```bash
 dcsync -method ldap $DOMAIN/$USER:"$PASSWORD"@$DC
 ```
+
+![](./docs/img/3.png)
 
 You can use this methods :
 
@@ -76,7 +78,7 @@ file
 dcsync -just-user-file ./usersfile.txt $DOMAIN/$USER:"$PASSWORD"@$DC
 ```
 
-![](./docs/img/2.png)
+![](./docs/img/4.png)
 
 ## How it works
 
